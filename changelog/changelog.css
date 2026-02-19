@@ -42,3 +42,24 @@ section {
     border-radius: 100%;
     display: none;
 }
+
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0px;
+    gap: 12px;
+    max-width: 100%;
+}
+
+.tag {
+    margin-block-start: 0;
+    margin-block-end: 1%;
+    flex: 0 0 auto; 
+
+    background: rgb(230, 230, 230);
+    color: rgb(34, 42, 61);
+    padding: 0.5rem;
+    border-radius: 5px;
+}

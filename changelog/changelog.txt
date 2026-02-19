@@ -1,29 +1,40 @@
+# 05/09/2025
+/ Actualités
+- Ajout des tags dans l'onglet Actualité
+
 # 04/09/2025
+/ Actualités ; Problèmes
 - Ajout du système d'actualités
 - Modification de la page d'accueil pour montrer les problèmes connus
 
 # 30/08/2025
+/ Font ; Style ; CSS ; Recherche
 - Modification de la police d'écriture du site
 - Ajout de la barre de recherche
 - Nouveau style du header
 
 # 29/08/2025
+/ Style ; CSS ; Technologies ; Responsive Mobile
 - Modification de l'interface graphique de la page projet
 - Ajout d'un dossier 'Technologies' pour afficher les technologies utilisées par projet
 - Retrait du responsive pour mobile - Trop compliqué à entretenir en vu de l'avancé du site
 
 # 27/08/2025
+/ URL
 - Ajout du hash dans l'url pour pouvoir se déplacer de projets en projets
 
 # 25/08/2025
+/ README.md 
 - Ajout du README sur GitHub
 
 # 23/08/2025
+/ Projets ; Contact ; Responsive Mobile
 - Début du site avec quelques projets pour tester
 - Déplacement des fichiers publiques à la racine du projet
 - Ajout d'une page de contact
 - Début du responsive pour mobile
 
 # 20/08/2025
+/ Début
 - Création du projet
 - Ajout d'un simple titre pour déployer le projet

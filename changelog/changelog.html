@@ -80,13 +80,20 @@
                     if (inSection) html += '</section>\n\n';
                     const dateStr = line.slice(2); // MM/DD/YYYY
                     const readableDate = formatDate(dateStr);
-                    html += `<section>\n    <h3>${readableDate}</h3>\n`;
+                    html            += `<section>\n
+                                        <h3>${readableDate}</h3>\n`;
                     inSection = true;
+                } else if (line.startsWith('/ ')) {
+                    const AllTags = line.slice(2).split(';').map(tag => tag.trim());
+                    html            += `<div class="tags">`;
+                    AllTags.forEach(tag => {
+                        html        += `<p class="tag">${tag}</p>\n`;
+                    })
+                    html            += `</div>`;
                 } else if (line.startsWith('- ')) {
-                    html += `    <li>${line.slice(2)}</li>\n`;
+                html                += `<li>${line.slice(2)}</li>\n`;
                 }
             }
-
             if (inSection)
                 html += '</section>\n';
             return html;
@@ -102,6 +109,8 @@
             date.setUTCHours(date.getUTCHours() + 2);
 
             const now = new Date();
+
+            console.log(now);
 
             const diffMs = now - date;
             const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
