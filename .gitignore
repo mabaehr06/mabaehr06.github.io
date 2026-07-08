@@ -1,0 +1,8 @@
+# node modules
+node_modules
+
+# logo
+non-posted-logo
+
+# env
+.env

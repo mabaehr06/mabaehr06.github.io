@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>M. BAEHR - Portfolio - Accueil</title>
+
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- <link rel="stylesheet" href="/projects/projets.css" /> -->
+    <link rel="stylesheet" href="/changelog/changelog.css" />
+
+    <script src="/script.js"></script>
+    <!-- <script src="/projects/projets.js"></script> -->
+</head>
+
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <h1 onclick="window.location.href='/'" style="cursor:pointer">Portfolio</h1>
+        </div>
+        <div class="header-right">
+            <span class="header-subtitle">Marc-Alexandre BAEHR</span>
+            <nav>
+                <a href="/index.html" class="nav_pages">Accueil</a>
+                <a href="/projects/projets.html" class="nav_pages">Projets</a>
+                <a href="/contact/contact.html" class="nav_pages">Contact</a>
+                <a href="/changelog/changelog.html" class="nav_pages">Actualités</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="changelog">
+
+        <section class="red-alert">
+            <p>Ce site n’est actuellement pas maintenu pour le moment.</p>
+            <p>Certains projets ne sont pas à jour.</p>
+        </section>
+
+
+        <section class="red-alert">
+            <p>Mis à jour le : <strong>04/09/2025</strong> - Si vous rencontrez un problème n'étant pas listé ici, merci de me <a href="/contact/contact.html">contacter</a></p>
+            <br>
+            <h2>    Liste des problèmes connues:</h2>
+            <p>- Affichage sur <strong>mobile</strong> (non-responsive et étroit)</p>
+            <p>- Affichage de la gallerie devenu étroit, uniquement sur le navigateur <strong>Firefox</strong></p>
+        </section>
+    
+        <hr>
+        <div id="changelog-js"></div>
+    </div>
+
+    <script>
+        async function loadChangelog() {
+            try {
+                const response = await fetch('changelog.txt');
+                if (!response.ok)
+                    throw new Error('Erreur de chargement du fichier');
+                
+                const text = await response.text();
+                const html = txtToHtml(text);
+                document.getElementById('changelog-js').innerHTML = html;
+            } catch (err) {
+                console.error(err);
+                document.getElementById('changelog-js').innerHTML = '<p>Impossible de charger les actualités.</p>';
+            }
+        }
+
+        function txtToHtml(txt) {
+            const lines = txt.split('\n');
+            let html = '';
+            let inSection = false;
+
+            for (let line of lines) {
+                line = line.trim();
+                if (line.startsWith('# ')) {
+                    if (inSection) html += '</section>\n\n';
+                    const dateStr = line.slice(2); // MM/DD/YYYY
+                    const readableDate = formatDate(dateStr);
+                    html            += `<section>\n
+                                        <h3>${readableDate}</h3>\n`;
+                    inSection = true;
+                } else if (line.startsWith('/ ')) {
+                    const AllTags = line.slice(2).split(';').map(tag => tag.trim());
+                    html            += `<div class="tags">`;
+                    AllTags.forEach(tag => {
+                        html        += `<p class="tag">${tag}</p>\n`;
+                    })
+                    html            += `</div>`;
+                } else if (line.startsWith('- ')) {
+                html                += `<li>${line.slice(2)}</li>\n`;
+                }
+            }
+            if (inSection)
+                html += '</section>\n';
+            return html;
+        }
+
+        function formatDate(dateStr) {
+            const parts = dateStr.split('/');
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const year = parseInt(parts[2], 10);
+            const date = new Date(Date.UTC(year, month, day, 0, 0, 0));
+            
+            date.setUTCHours(date.getUTCHours() + 2);
+
+            const now = new Date();
+
+            console.log(now);
+
+            const diffMs = now - date;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            let label = '';
+            if (diffDays === 0) {
+                label = 'Aujourd\'hui';
+            } else if (diffDays >= 1 && diffDays < 30) {
+                label = `${diffDays > 1 ? `Il y a ${diffDays} jours` : 'Hier'}`;
+            } else if (diffDays >= 30 && diffDays < 365) {
+                const months = Math.floor(diffDays / 30);
+                label = `Il y a ${months} mois`;
+            } else {
+                const years = Math.floor(diffDays / 365);
+                const remainingMonths = Math.floor((diffDays % 365) / 30);
+                label = `Il y a ${years} an${years > 1 ? 's' : ''}${remainingMonths > 0 ? ` et ${remainingMonths} mois` : ''}`;
+            }
+
+            return `${label} (${dateStr})`;
+        }
+        loadChangelog();
+    </script>
+
+</body>
+
+</html>

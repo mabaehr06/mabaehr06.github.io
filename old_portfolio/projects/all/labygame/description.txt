@@ -1,0 +1,4 @@
+LabyGame est un jeu de type labyrinthe développé en Python avec la bibliothèqye PyGame.
+Le joueur doit mémoriser un chemin de labyrinthe généré aléatoire, puis naviguer à travers le labyrinthe sans voir où il se situe.
+Le joueur perd des vies en se heurtant aux murs, mais il a la capacité d'utiliser des objets spéciaux pour l'aider dans le labyrinthe.
+Les objets spéciaux peuvent être achetés via le système de pièces, récoltables dans le labyrinthe.

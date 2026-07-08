@@ -1,0 +1,4 @@
+Projet de fin de 1ère année à Epitech, réalisation d'un shell en C.
+Basé sur le shell tcsh, notre équipe a implémenté la majorité des fonctionnalités, à savoir:
+Les redirections (simples et doubles), les pipes, les commandes internes, les alias,
+les variables d'environnement, la gestion des erreurs, etc..

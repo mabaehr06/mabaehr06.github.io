@@ -1,0 +1,2 @@
+Projet Web de gestion de tâches, réalisé par une équipe de 3 personnes.
+Le projet m'a permis d'en apprendre plus sur les technologies du web.

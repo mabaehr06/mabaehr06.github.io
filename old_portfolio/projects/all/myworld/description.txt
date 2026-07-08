@@ -1,0 +1,4 @@
+Projet graphique utilisant la 2D isométrique pour creer notre propre terrain personalisable.
+On a creer un système avec bouton permettant de monter, descendre ou encore remettre à zéro la hauteur du terrain.
+Nous pouvons aussi changer la texture de chaque case à l'aide d'un menu déroulant figurant en bas de l'écran
+On peut également sauvegardre notre terrain, redémarrer l'application, et charger notre terrain

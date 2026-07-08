@@ -1,0 +1,1 @@
+MyHunter est une reproduction du célèbe jeu <a class='json_a' href=https://fr.wikipedia.org/wiki/Duck_Hunt>Duck Hunt</a>, développé en C avec la librairie CSFML.

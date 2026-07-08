@@ -1,0 +1,1 @@
+Recréation du célèbe jeu 2048 en Python à l'aide de la libraire PyGame

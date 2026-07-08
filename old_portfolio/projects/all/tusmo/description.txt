@@ -1,0 +1,8 @@
+Tusmo est un jeu de lettre inspiré du jeu télévisé <a class='json_a' href=https://fr.wikipedia.org/wiki/Motus_(jeu_t%C3%A9l%C3%A9vis%C3%A9)>Motus</a>
+développé en C avec la librairie CSFML.
+
+Le jeu consiste à deviner un mot de 5 lettres en 6 essais ou moins.
+A chaque essais, vous saurez quelles lettres sont bien placés (en rouge) et ceux présente dans le mot (en jaune)
+
+Dans cette reproduction, vous avez 2 minutes pour trouver le mot, et chaque partie dure 5 manches
+mais vous pouvez définir vous même le nombre de manches souhaité par partie.

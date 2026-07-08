@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title>M. BAEHR - Portfolio - Projets</title>
+	
+	<link rel="stylesheet" href="/styles.css" />
+	<link rel="stylesheet" href="/projects/projets.css" />
+	
+	<script src="/script.js"></script>
+	<script src="/projects/projets.js"></script>
+</head>
+
+
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <h1 onclick="window.location.href='/'" style="cursor:pointer">Portfolio</h1>
+        </div>
+		<div class="header-right">
+            <span class="header-subtitle">Marc-Alexandre BAEHR</span>
+            <nav>
+                <a href="/index.html" class="nav_pages">Accueil</a>
+                <a href="/projects/projets.html" class="nav_pages">Projets</a>
+                <a href="/contact/contact.html" class="nav_pages">Contact</a>
+                <a href="/changelog/changelog.html" class="nav_pages">Actualités</a>
+            </nav>
+        </div>
+    </header>
+
+	<main class="projets-container">
+		<aside class="sidebar" id="sidebar">
+			<input type="text" id="search-input" placeholder="Recherche un projet (nom ou technologie)...">
+			<div id="search-count">0 projet trouvé</div>
+			<!-- Rien car tout est fais grace au script projets.js -->
+		</aside>
+
+		<section class="project-details" id="project-details">
+			<p class="no-selection">
+				Sélectionnez un projet pour voir les détails.
+			</p>
+		</section>
+	</main>
+</body>
+
+
+
+</html>
